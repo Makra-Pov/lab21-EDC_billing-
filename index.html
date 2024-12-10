@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Invoice</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+        .card {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row g-4">
+            <!-- Form Section -->
+            <div class="col-lg-6">
+                <div class="card p-4">
+                    <div class="text-center mb-4">
+                        <img src="images/logo.png" alt="Company Logo" class="img-fluid" style="max-width: 100px;">
+                        <h1>Invoice Form</h1>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Enter Username</label>
+                        <input type="text" id="username" class="form-control" placeholder="Enter your username">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="uid" class="form-label">Enter UID</label>
+                        <input type="text" id="uid" class="form-control" placeholder="Enter your UID">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="meterPrev" class="form-label">Enter Meter Reading Previous</label>
+                        <input type="text" id="meterPrev" class="form-control" placeholder="Enter previous meter reading">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="meterPresent" class="form-label">Enter Meter Reading Present</label>
+                        <input type="text" id="meterPresent" class="form-control" placeholder="Enter present meter reading">
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="trashBill">
+                        <label class="form-check-label" for="trashBill">Include Trash Bill</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pricePerUnit" class="form-label">Select Price per Unit</label>
+                        <select id="pricePerUnit" class="form-select">
+                            <option value="5">5 USD</option>
+                            <option value="10">10 USD</option>
+                            <option value="15">15 USD</option>
+                            <option value="20">20 USD</option>
+                        </select>
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-success" type="button" onclick="calculateInvoice()">Generate Invoice</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoice Section -->
+            <div class="col-lg-6">
+                <div class="card p-4 shadow-lg border-0">
+                    <h1 class="text-center mb-4 text-primary">Invoice</h1>
+                    <div class="mt-4">
+                        <p class="mb-3"><strong>Username:</strong> <span id="invUsername" class="text-muted"></span></p>
+                        <p class="mb-3"><strong>UID:</strong> <span id="invUID" class="text-muted"></span></p>
+                        <p class="mb-3"><strong>Meter Reading Previous:</strong> <span id="invMeterPrev" class="text-muted"></span></p>
+                        <p class="mb-3"><strong>Meter Reading Present:</strong> <span id="invMeterPresent" class="text-muted"></span></p>
+                        <p class="mb-3"><strong>Trash Bill Included:</strong> <span id="invTrashBill" class="text-muted">[Yes/No]</span></p>
+                        <p class="mb-3"><strong>Price per Unit:</strong> <span id="invPricePerUnit" class="text-muted"></span></p>
+                        <hr class="my-4">
+                        <p class="h5"><strong>Total Amount:</strong> <span id="invTotal" class="text-success"></span></p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-m3Q9a/ZaW5zdvB1q6LgmbFjzZw7NnOYIvAv8HRru6G9d4WvvpSEYHibZjhxQv5PW" crossorigin="anonymous"></script>
+</body>
+</html>
